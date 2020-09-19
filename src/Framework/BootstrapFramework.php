@@ -50,6 +50,35 @@ class BootstrapFramework implements Framework
         'muted'     => 'gray-700',
     ];
 
+    protected $components = [
+        'general',
+        'grid',
+        'borders',
+        'mediaObject',
+        'colors',
+        'display',
+        'sizing',
+        'flexElements',
+        'spacing',
+        'text',
+        'floats',
+        'positioning',
+        'visibility',
+        'alerts',
+        'verticalAlignment',
+        'badges',
+        'breadcrumb',
+        'buttons',
+        'cards',
+        'dropdowns',
+        'forms',
+        'inputGroups',
+        'listGroups',
+        'modals',
+        'navs',
+        'pagination',
+    ];
+
     public function frameworkName(): string
     {
         return 'Bootstrap';
@@ -90,34 +119,7 @@ class BootstrapFramework implements Framework
      */
     public function get(): \Generator
     {
-        foreach ([
-            'general',
-            'grid',
-            'borders',
-            'mediaObject',
-            'colors',
-            'display',
-            'sizing',
-            'flexElements',
-            'spacing',
-            'text',
-            'floats',
-            'positioning',
-            'visibility',
-            'alerts',
-            'verticalAlignment',
-            'badges',
-            'breadcrumb',
-            'buttons',
-            'cards',
-            'dropdowns',
-            'forms',
-            'inputGroups',
-            'listGroups',
-            'modals',
-            'navs',
-            'pagination',
-        ] as $component) {
+        foreach ($this->components as $component) {
             yield $this->$component();
         }
     }
@@ -177,7 +179,7 @@ class BootstrapFramework implements Framework
             // 'collapse' => 'hidden',
             'collapsing' => 'relative h-0 overflow-hidden ', //there should be a h-0
 
-            'close' => 'absolute top-0 bottom-0 right-0 px-4 py-3',
+//            'close' => 'absolute top-0 bottom-0 right-0 px-4 py-3',
 
             //http://getbootstrap.com/docs/4.0/components/jumbotron/
             'jumbotron'       => 'py-8 px-4 md:py-16 md:px-8 mb-8 bg-gray-200 rounded',
